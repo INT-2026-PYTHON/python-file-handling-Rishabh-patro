@@ -80,3 +80,15 @@ see
 this
 gives
 life
+sowpods_set = set()
+
+with open("sowpods.txt", "r") as file:
+    for line in file:
+        sowpods_set.add(line.strip().lower())
+
+with open("sonnet_words.txt", "r") as file:
+    for line in file:
+        word = line.strip().lower()
+
+        if word not in sowpods_set:
+            print(word)
